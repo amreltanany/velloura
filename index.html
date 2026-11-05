@@ -266,14 +266,15 @@ header{top:18px;padding:0 28px;align-items:center}
 .hero .cap .tag::before{background:var(--light);width:10px;height:10px}
 .jg{position:absolute;left:0;right:0;top:calc(100svh - 26px);text-align:center;color:var(--mute);letter-spacing:.1em}
 .hero .cta{top:calc(100svh + 40px);bottom:auto;right:28px}
-@media(max-width:760px){.hero{height:calc(100svh + 280px)}.ticket{display:none}.hero .cap{left:18px;right:18px}.jg{display:none}.hero .cta{left:18px;right:18px;top:calc(100svh + 170px)}}
+@media(max-width:600px){header{padding:0 14px}.logo{font-size:22px;gap:8px}.logo i{width:24px;height:24px}.nav-r{gap:8px}.pill.order,.pill.mob{padding:10px 14px;font-size:13px}.rw .meta{display:none}.rw b{font-size:20px}}
+@media(max-width:760px){.hero{height:calc(100svh + 280px)}.hero h1 .ticket{display:none}.hero .cap{left:18px;right:18px}.jg{display:none}.hero .cta{left:18px;right:18px;top:calc(100svh + 170px)}}
 
 footer{background:var(--ink);color:var(--light);padding:80px 0 28px;overflow:hidden}
 .fcols{display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:32px;font-size:14px}
 .fcols h4{font:700 11px var(--mono);color:var(--accent);margin-bottom:14px}
 .fcols a{display:block;padding:3px 0;opacity:.8}.fcols a:hover{opacity:1;color:var(--accent)}
 .fcols p{opacity:.75;max-width:320px;margin-bottom:18px}
-.mega{font:400 clamp(80px,21vw,320px)/.8;color:var(--accent);margin:56px 0 20px;letter-spacing:-.02em;text-align:center;display:flex;justify-content:center}
+.mega{font:400 clamp(80px,21vw,320px)/.8 var(--display);color:var(--accent);margin:56px 0 20px;letter-spacing:-.02em;text-align:center;display:flex;justify-content:center}
 .mega span{display:inline-block;transition:transform .4s var(--spring)}.mega span:hover{transform:translateY(-3%) rotate(-3deg)}
 .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:400 11px var(--mono);opacity:.7;border-top:1px solid rgba(255,253,248,.2);padding-top:18px}
 @media(max-width:900px){.fcols{grid-template-columns:1fr 1fr}.fcols>:first-child{grid-column:1/-1}}
