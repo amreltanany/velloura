@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>VÈLÔURÁ — Coffee Shop & Bakery</title>
-<meta name="description" content="A small bakery and coffee shop in Stockholm. Baked at five, gone by noon.">
+<meta name="description" content="A small bakery and coffee shop in Cairo. Baked at five, gone by noon.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Caprasimo&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
 }
 *{box-sizing:border-box;margin:0}
 body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+main{overflow-x:clip}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;text-align:left}
 img{display:block;max-width:100%}
@@ -86,7 +87,8 @@ header>*{pointer-events:auto}
 .it:hover img{transform:translateY(-6px) rotate(-4deg)}
 .it h3{font-size:19px}.it small{display:block;font:400 11px var(--mono);color:var(--mute)}
 .it.gone{opacity:.28;filter:grayscale(1)}
-@media(max-width:900px){.counter{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){.counter{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:420px){.it h3{font-size:15px;overflow-wrap:anywhere}.it small{font-size:10px;overflow-wrap:anywhere}}
 
 /* morning */
 .morning{background:var(--light)}
@@ -97,7 +99,7 @@ header>*{pointer-events:auto}
 .step p{font-size:14px;color:var(--mute)}
 .step img{aspect-ratio:3/4;object-fit:cover;width:100%;border-radius:var(--r-2xl);margin:18px 0 10px}
 .note{font:400 11px var(--mono)}.note b{background:var(--accent);padding:2px 6px;border-radius:var(--r-sm);font-weight:700}
-@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}@media(max-width:560px){.steps{grid-template-columns:1fr}}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}@media(max-width:560px){.steps{grid-template-columns:minmax(0,1fr)}}
 
 /* menu */
 .menu-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
@@ -123,7 +125,7 @@ header>*{pointer-events:auto}
 .plate p{color:var(--mute);margin:8px 0 16px}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
 .chip{font:700 10px var(--mono);padding:5px 9px;border-radius:var(--r-pill);box-shadow:inset 0 0 0 1px var(--ink)}
-@media(max-width:900px){.menu-wrap{grid-template-columns:1fr}.plate{position:static}}
+@media(max-width:900px){.menu-wrap{grid-template-columns:minmax(0,1fr)}.plate{position:static}}
 
 /* coffee */
 .coffee{background:var(--ink);color:var(--light)}
@@ -146,7 +148,7 @@ header>*{pointer-events:auto}
 .guide input{width:100%;accent-color:var(--ink)}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
 .nums b{display:block;font:400 34px/1.1 var(--display)}.nums span{font:700 10px var(--mono)}
-@media(max-width:900px){.cgrid,.guide{grid-template-columns:1fr}}@media(max-width:560px){.beans{grid-template-columns:1fr}}
+@media(max-width:900px){.cgrid,.guide{grid-template-columns:minmax(0,1fr)}}@media(max-width:560px){.beans{grid-template-columns:minmax(0,1fr)}}
 
 /* cakes */
 .cakes-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
@@ -164,7 +166,7 @@ header>*{pointer-events:auto}
 .build input:focus-visible,.nl input:focus-visible{box-shadow:inset 0 0 0 1.5px var(--ink);outline-offset:2px}
 .total{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:6px}
 .total b{font:400 44px/1 var(--display)}
-@media(max-width:900px){.cakes-wrap{grid-template-columns:1fr}}
+@media(max-width:900px){.cakes-wrap{grid-template-columns:minmax(0,1fr)}}
 
 /* numbers */
 .numbers{background:var(--accent)}
@@ -183,7 +185,7 @@ header>*{pointer-events:auto}
 .status{display:inline-flex;gap:8px;align-items:center;font:400 11px var(--mono)}.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink-45,rgba(42,26,18,.45))}
 .status.open::before{background:var(--accent);box-shadow:0 0 0 1px var(--ink)}
 .shop p{font-size:14px}.shop .mute{color:var(--mute)}
-@media(max-width:900px){.shops{grid-template-columns:1fr}}
+@media(max-width:900px){.shops{grid-template-columns:minmax(0,1fr)}}
 
 /* notes */
 .notes{background:var(--light);overflow:hidden}
@@ -196,7 +198,7 @@ header>*{pointer-events:auto}
 
 /* preorder */
 .box{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
-.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.picks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
 .pick{background:var(--light);border-radius:var(--r-xl);padding:14px;text-align:center;box-shadow:inset 0 0 0 1px var(--line);transition:.2s;position:relative}
 .pick:hover{box-shadow:inset 0 0 0 1.5px var(--ink);transform:translateY(-3px)}
 .pick img{height:80px;margin:0 auto 6px;object-fit:contain}.pick b{display:block;font-size:13px}.pick small{font:400 11px var(--mono)}
@@ -205,14 +207,15 @@ header>*{pointer-events:auto}
 .inner{background:var(--bg);border-radius:var(--r-xl);min-height:150px;padding:14px;box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:4px;text-align:center}
 .inner img{height:64px;animation:pop .4s var(--spring)}@keyframes pop{from{transform:scale(0)}}
 .inner .mono{width:100%}
-@media(max-width:900px){.box{grid-template-columns:1fr}}
+@media(max-width:900px){.box{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:420px){.total b{font-size:32px}.pick b{overflow-wrap:anywhere}.pick{padding:10px}}
 
 /* journal */
 .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .post img{border-radius:var(--r-2xl);aspect-ratio:4/3;object-fit:cover;width:100%;margin-bottom:16px;transition:border-radius .5s var(--spring)}
 .post:hover img{border-radius:var(--r-blob)}
 .post h3{font-size:26px;margin:8px 0 6px}.post p{color:var(--mute);font-size:14px;margin-bottom:10px}
-@media(max-width:900px){.posts{grid-template-columns:1fr}}
+@media(max-width:900px){.posts{grid-template-columns:minmax(0,1fr)}}
 
 /* faq */
 .faq-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:48px}
@@ -225,7 +228,7 @@ summary::-webkit-details-marker{display:none}
 summary::after{content:"+";font:400 22px/1 var(--mono);transition:transform .3s}
 details[open] summary::after{transform:rotate(45deg)}
 details p{padding:0 22px 20px;color:var(--mute)}
-@media(max-width:900px){.faq-wrap{grid-template-columns:1fr}}
+@media(max-width:900px){.faq-wrap{grid-template-columns:minmax(0,1fr)}}
 
 /* hero + nav v2 (matches reference) */
 header{top:18px;padding:0 28px;align-items:center}
@@ -306,7 +309,7 @@ footer{background:var(--ink);color:var(--light);padding:80px 0 28px;overflow:hid
     <span class="a" aria-hidden="true">Baked</span>
     <span class="mid" aria-hidden="true">
       <img class="croissant" id="hcro" alt="">
-      <span class="ticket"><em class="stamp">LAST FEW</em><b>Butter croissant</b><strong>42 kr</strong><small>out of the oven 6:40</small></span>
+      <span class="ticket"><em class="stamp">LAST FEW</em><b>Butter croissant</b><strong>EGP 105</strong><small>out of the oven 6:40</small></span>
     </span>
     <span class="a" aria-hidden="true">at five.</span>
     <span class="a2 top" aria-hidden="true">Gone</span>
@@ -349,7 +352,7 @@ footer{background:var(--ink);color:var(--light);padding:80px 0 28px;overflow:hid
 <section id="menu">
   <div class="wrap">
     <div class="sub"><div><span class="tag" data-r>07:00 — The menu</span><h2 data-r>Short menu.<br><span class="hl">Made this morning.</span></h2></div>
-    <p class="lead" data-r>Six things done properly beat sixty done fast. Prices include tax.</p></div>
+    <p class="lead" data-r>Six things done properly beat sixty done fast. Prices in EGP, VAT included.</p></div>
     <div class="menu-wrap">
       <div>
         <div class="cats" id="cats" role="tablist" aria-label="Menu categories"></div>
@@ -394,7 +397,7 @@ footer{background:var(--ink);color:var(--light);padding:80px 0 28px;overflow:hid
         <div><div class="lab">SIZE</div><div class="opts" id="oSize"></div></div>
         <div><div class="lab">FLAVOUR</div><div class="opts" id="oFlav"></div></div>
         <div><div class="lab"><label for="msgIn">MESSAGE ON THE CAKE</label><span id="left">30 letters left</span></div><input type="text" id="msgIn" maxlength="30" value="Happy birthday"></div>
-        <div class="total"><div><div class="lab" style="margin:0">YOUR CAKE</div><b id="cakeP">580 kr</b></div><button class="btn btn-dark" id="cakeBtn">Order this cake</button></div>
+        <div class="total"><div><div class="lab" style="margin:0">YOUR CAKE</div><b id="cakeP">EGP 1,450</b></div><button class="btn btn-dark" id="cakeBtn">Order this cake</button></div>
         <p class="mono" id="cakeMsg" role="status" style="color:var(--mute)">Order 48 hours ahead · Paid when you collect</p>
       </div>
     </div>
@@ -421,7 +424,7 @@ footer{background:var(--ink);color:var(--light);padding:80px 0 28px;overflow:hid
 <section id="shops">
   <div class="wrap">
     <div class="sub"><div><span class="tag" data-r>Come by</span><h2 data-r>Three shops.<br><span class="hl">One oven.</span></h2></div>
-    <p class="lead" data-r>Everything is baked in Södermalm at five and carried to the other two before they open.</p></div>
+    <p class="lead" data-r>Everything is baked in Zamalek at five and carried to the other two before they open.</p></div>
     <div class="shops" id="shopGrid"></div>
   </div>
 </section>
@@ -451,7 +454,7 @@ footer{background:var(--ink);color:var(--light);padding:80px 0 28px;overflow:hid
       <div class="lab" style="margin:0">COLLECT FROM</div><div class="opts" id="oShop"></div>
       <div class="lab" style="margin:0">READY AT</div><div class="opts" id="oTime"></div>
       <div class="inner" id="inner"></div>
-      <div class="total"><div><div class="lab" style="margin:0">TOTAL</div><b id="boxT">0 kr</b></div><button class="btn btn-dark" id="boxBtn" disabled>Pre-order this box</button></div>
+      <div class="total"><div><div class="lab" style="margin:0">TOTAL</div><b id="boxT">EGP 0</b></div><button class="btn btn-dark" id="boxBtn" disabled>Pre-order this box</button></div>
       <p class="mono" id="boxMsg" role="status"></p>
     </div>
   </div>
@@ -474,7 +477,7 @@ footer{background:var(--ink);color:var(--light);padding:80px 0 28px;overflow:hid
       <h2 data-r>Before you<br><span class="hl">come by.</span></h2>
       <p class="lead" data-r>The short answers. For anything else, write to us.</p>
       <div class="cats" id="fcats" style="margin-top:22px"></div>
-      <div class="box2" data-r><span class="mono">STILL HUNGRY?</span><b class="disp" style="font-size:24px;font-weight:400">Write to <a class="link" style="color:var(--ink)" href="mailto:hej@fikabakery.co">hej@fikabakery.co</a></b></div>
+      <div class="box2" data-r><span class="mono">STILL HUNGRY?</span><b class="disp" style="font-size:24px;font-weight:400">Write to <a class="link" style="color:var(--ink)" href="mailto:hello@velloura.example">hello@velloura.example</a></b></div>
     </div>
     <div class="qs" id="qs"></div>
   </div>
@@ -486,11 +489,11 @@ footer{background:var(--ink);color:var(--light);padding:80px 0 28px;overflow:hid
     <div class="fcols">
       <div><p>A small bakery and coffee shop. Everything is baked here before sunrise and poured to order until the shelves are empty.</p><a class="btn btn-yellow" href="#order" style="display:inline-flex;opacity:1;color:var(--ink)">Pre-order for the morning</a></div>
       <div><h4>EAT & DRINK</h4><a href="#menu">Menu</a><a href="#order">Order ahead</a><a href="#cakes">Cakes to order</a><a href="#coffee">Coffee beans</a><a href="#faq">Catering</a></div>
-      <div><h4>VISIT</h4><a href="#shops">Södermalm · closed</a><a href="#shops">Vasastan · closed</a><a href="#shops">Östermalm · closed</a></div>
-      <div><h4>VÈLÔURÁ</h4><a href="#journal">About</a><a href="#journal">Journal</a><a href="#top">Jobs</a><a href="mailto:hej@fikabakery.co">Contact</a></div>
+      <div><h4>VISIT</h4><a href="#shops">Zamalek · closed</a><a href="#shops">Maadi · closed</a><a href="#shops">Heliopolis · closed</a></div>
+      <div><h4>VÈLÔURÁ</h4><a href="#journal">About</a><a href="#journal">Journal</a><a href="#top">Jobs</a><a href="mailto:hello@velloura.example">Contact</a></div>
       <div><h4>LEGAL</h4><a href="#top">Privacy</a><a href="#top">Terms</a><a href="#top">Cookies</a></div>
     </div>
-    <p class="mono" style="margin-top:36px;opacity:.75">Nytorgsgatan 31, 116 40 Stockholm · +46 8 555 01 37 · hej@fikabakery.co · Instagram · TikTok · Facebook</p>
+    <p class="mono" style="margin-top:36px;opacity:.75">14 Hassan Sabry St, Zamalek, Cairo 11211 · +20 2 0000 0137 · hello@velloura.example · Instagram · TikTok · Facebook</p>
     <div class="mega" aria-hidden="true"><span>V</span><span>È</span><span>L</span><span>Ô</span><span>U</span><span>R</span><span>Á</span></div>
     <div class="fbot"><span>© 2026 VÈLÔURÁ. All rights reserved.</span><span>Baked at five. Gone by noon.</span><a href="#top">Back to top ↑</a></div>
   </div>
@@ -500,7 +503,7 @@ footer{background:var(--ink);color:var(--light);padding:80px 0 28px;overflow:hid
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-const $=s=>document.querySelector(s), I=(id,w=1024)=>`https://framerusercontent.com/images/${id}.webp?scale-down-to=${w}`;
+const egp=n=>'EGP '+Number(n).toLocaleString('en-US'),$=s=>document.querySelector(s), I=(id,w=1024)=>`https://framerusercontent.com/images/${id}.webp?scale-down-to=${w}`;
 const IMG={cro:'j9J4SD06hH1Y8ngsDy5HBTJU',bun:'npidf0CxUrO96u77HYmPXtBYwMA',sour:'8QGQfRWhWwvw2pRSyhXL9FUsO8',cook:'VGfDp2nMqm63PeZpKh1w4bxUE',tart:'0H11pzDWUWNMrh5uuVO70PscTo',cake:'KUm1BAmxBkVUd0K5fDqTjV14y4',latte:'BVUbm1mQVA6rb4UfcuY0ekRg7A',alm:'UlP5PfjYVaomFyKqEyotLFlP8I',card:'B6s6miGb0tSiIvUUMF4DcqzZTA',morn:'JtQldbTD4PZz8eerEHAls9gxZI',shelf:'m99u2Fa8CdkwJwgIa7wK9z0r7EI',kettle:'mRjklCpndX8PUN1AdodwJBVEjc',roast:'IszSA0fVTBs81QCSfLJH0MwGjmU',brew:'GxbRH4sTT0O5RJYURYu9eWmdn0',tin:'MJkWzQptrpwGStGXdDv9iZkPZA',inter:'29i47rdYtzbDV7c8KeW4r9B0CM',front:'xhbrfc7klzAoWfGh7KTAPnYeCQ',iced:'ZoWVvQRDGyHfcMHfnsLsnLYhXE',matcha:'GfDT5VpZ6UsdBZznjWXBZXdaCM',oven:'KAIhfUxjuzTWxm7NFr3oaoN2d8',shape:'rb5hEqCOXmGbgQzji21Vg1WBAgo',out:'aeiEzzV4uSeEG2TdYDSgZhJ0lFE'};
 const img=(k,w)=>I(IMG[k],w);
 $('#herobg').style.backgroundImage=`url(${img('shelf',2048)})`;$('#hcro').src=img('cro');
@@ -513,12 +516,12 @@ document.querySelectorAll('.openTxt').forEach(e=>e.textContent=isOpen?'Open now 
 const mm=m=>String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
 
 // today's bake slider
-const TODAY=[['Country sourdough','sour',90,null],['Butter croissant','cro',42,530],['Cinnamon bun','bun',45,630],['Sea salt cookie','cook',36,660],['Lemon meringue tart','tart',59,690],['Strawberry layer cake','cake',68,715]];
+const TODAY=[['Country sourdough','sour',225,null],['Butter croissant','cro',105,530],['Cinnamon bun','bun',115,630],['Sea salt cookie','cook',90,660],['Lemon meringue tart','tart',150,690],['Strawberry layer cake','cake',170,715]];
 $('#counter').innerHTML=TODAY.map((t,i)=>`<div class="it" data-i="${i}"><img src="${img(t[1],512)}" alt=""><h3>${t[0]}</h3><small></small></div>`).join('');
 function clock(){
   const v=+$('#clock').value;let left=0;
   document.querySelectorAll('.it').forEach((el,i)=>{const g=TODAY[i][3],gone=g&&v>=g;el.classList.toggle('gone',!!gone);if(!gone)left++;
-    el.querySelector('small').textContent=gone?'Gone '+mm(g):`on the counter · ${TODAY[i][2]} kr`});
+    el.querySelector('small').textContent=gone?'Gone '+mm(g):`on the counter · ${egp(TODAY[i][2])}`});
   $('#comeTitle').innerHTML=`Come at ${mm(v)}.<br><span class="hl">${left===0?'All gone.':left===6?'All six are here.':(['Zero','One','Two','Three','Four','Five'][left])+' '+(left===1?'is':'are')+' left.'}</span>`;
   $('#clock').setAttribute('aria-valuetext',mm(v));
 }
@@ -526,24 +529,24 @@ $('#clock').oninput=clock;clock();
 
 // morning
 const clk='<svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="17" cy="17" r="15"/><path d="M17 8v9l6 4" stroke-linecap="round"/></svg>';
-$('#steps').innerHTML=[['04:00','The oven goes on','Elin is in before the trams run. The stone deck needs an hour to reach 250 degrees.','First loaf in at 04:50','oven'],['05:00','Shaping','Dough that proved overnight is shaped by hand: buns tied, croissants rolled, loaves turned into their baskets.','412 buns tied this morning','shape'],['06:10','Out of the oven','The first trays come out. Croissants rest ten minutes, bread sings on the rack for an hour.','Do not cut the bread yet','out'],['07:00','Doors open','The counter is full and the coffee is on. From now on it only gets emptier.','See you at the counter','shelf']].map(s=>`<article class="step" data-r><div class="time">${clk}${s[0]}</div><h3>${s[1]}</h3><p>${s[2]}</p><img src="${img(s[4],800)}" alt="${s[1]}" loading="lazy"><p class="note">BAKER'S NOTE <b>${s[3]}</b></p></article>`).join('');
+$('#steps').innerHTML=[['04:00','The oven goes on','Nadine is in before the metro runs. The stone deck needs an hour to reach 250 degrees.','First loaf in at 04:50','oven'],['05:00','Shaping','Dough that proved overnight is shaped by hand: buns tied, croissants rolled, loaves turned into their baskets.','412 buns tied this morning','shape'],['06:10','Out of the oven','The first trays come out. Croissants rest ten minutes, bread sings on the rack for an hour.','Do not cut the bread yet','out'],['07:00','Doors open','The counter is full and the coffee is on. From now on it only gets emptier.','See you at the counter','shelf']].map(s=>`<article class="step" data-r><div class="time">${clk}${s[0]}</div><h3>${s[1]}</h3><p>${s[2]}</p><img src="${img(s[4],800)}" alt="${s[1]}" loading="lazy"><p class="note">BAKER'S NOTE <b>${s[3]}</b></p></article>`).join('');
 
 // menu
 const M={
- Pastries:[['Butter croissant',42,'Three days of folding, 27 layers','6:40','cro','LAST FEW','French butter, a slow three day fold and a hot oven. Crisp outside, soft honeycomb inside.',['GLUTEN','MILK','EGG']],['Cinnamon bun',45,'Cardamom dough, pearl sugar','7:10','bun','NEW','Kanelbulle the Stockholm way: cardamom in the dough, pearl sugar on top, baked dark.',['GLUTEN','MILK','EGG']],['Sea salt cookie',36,'Dark chocolate, flaky salt','8:20','cook','VEGAN','Big, soft in the middle, crisp at the edge. Chunks of dark chocolate and a pinch of flaky salt.',['GLUTEN']],['Almond croissant',49,'Twice baked, frangipane','7:30','alm','','A day-old croissant filled with frangipane, baked a second time until deep gold.',['GLUTEN','MILK','EGG','NUTS']],['Cardamom knot',45,'Green cardamom, brown butter','7:10','card','','Twisted by hand, brushed with brown butter and rolled in green cardamom sugar.',['GLUTEN','MILK','EGG']],['Morning bun',42,'Orange zest, cinnamon sugar','7:40','morn','','Laminated dough rolled with orange zest and cinnamon sugar. Sticky, bright, gone first.',['GLUTEN','MILK','EGG']]],
- Bread:[['Country sourdough',90,'36 hours, stone baked','6:30','sour','','A slow, open loaf with a blistered crust and a sour, wheaty crumb. Keeps for a week.',['GLUTEN']],['Rye loaf',78,'Dense, seeded, a little sweet','6:45','sour','','Dark rye with sunflower and linseed. Slice it thin and put cheese on it.',['GLUTEN']]],
- Cakes:[['Strawberry layer cake',68,'Vanilla sponge, jam, cream','8:00','cake','','Three layers of vanilla sponge, strawberry jam and whipped cream. Sold by the slice.',['GLUTEN','MILK','EGG']],['Lemon meringue tart',59,'Sharp curd, toasted meringue','8:00','tart','','Buttery shortcrust, tart lemon curd and a cloud of meringue torched to order.',['GLUTEN','MILK','EGG']],['Chocolate drip cake',66,'Dark, damp, glossy','8:00','cake','','Deep chocolate sponge with a ganache drip. Best with black coffee.',['GLUTEN','MILK','EGG']]],
- Coffee:[['Flat white',46,'Double shot, silky milk','7:00','latte','','A double shot of House espresso and microfoam. Small, strong and smooth.',['MILK']],['Filter coffee',38,'Morning filter, refills free','7:00','latte','','Brewed by hand at 94 °C. Ask what is on the bar today.',[]],['Cortado',42,'Equal parts espresso and milk','7:00','latte','','Short and balanced. Chocolate and hazelnut from the House espresso.',['MILK']],['Espresso',32,'House blend, Brazil & Ethiopia','7:00','latte','','Chocolate, hazelnut and orange in a small cup.',[]]],
- 'Matcha & Tea':[['Matcha latte',58,'Whisked by hand, oat or milk','7:00','matcha','','Ceremonial grade matcha whisked to order, topped with steamed milk.',['MILK']],['Iced matcha',60,'Matcha, cold milk, ice','7:00','iced','','Whisked matcha poured over cold milk and ice. Stir before sipping.',['MILK']],['Pot of tea',45,'Ask for today\'s leaves','7:00','latte','','Loose leaf, brewed in a pot for two cups.',[]]],
- Food:[['Cheese & ham toastie',82,'Sourdough, aged cheddar','8:00','sour','','Thick sourdough, aged cheddar and ham, griddled until the edges crackle.',['GLUTEN','MILK']],['Soup & bread',89,'Changes daily','8:00','sour','','One soup a day, made in the morning. Comes with a thick slice of sourdough.',['GLUTEN']]]
+ Pastries:[['Butter croissant',105,'Three days of folding, 27 layers','6:40','cro','LAST FEW','French butter, a slow three day fold and a hot oven. Crisp outside, soft honeycomb inside.',['GLUTEN','MILK','EGG']],['Cinnamon bun',115,'Cardamom dough, pearl sugar','7:10','bun','NEW','A Scandinavian kanelbulle, baked in Cairo: cardamom in the dough, pearl sugar on top, baked dark.',['GLUTEN','MILK','EGG']],['Sea salt cookie',90,'Dark chocolate, flaky salt','8:20','cook','VEGAN','Big, soft in the middle, crisp at the edge. Chunks of dark chocolate and a pinch of flaky salt.',['GLUTEN']],['Almond croissant',125,'Twice baked, frangipane','7:30','alm','','A day-old croissant filled with frangipane, baked a second time until deep gold.',['GLUTEN','MILK','EGG','NUTS']],['Cardamom knot',115,'Green cardamom, brown butter','7:10','card','','Twisted by hand, brushed with brown butter and rolled in green cardamom sugar.',['GLUTEN','MILK','EGG']],['Morning bun',105,'Orange zest, cinnamon sugar','7:40','morn','','Laminated dough rolled with orange zest and cinnamon sugar. Sticky, bright, gone first.',['GLUTEN','MILK','EGG']]],
+ Bread:[['Country sourdough',225,'36 hours, stone baked','6:30','sour','','A slow, open loaf with a blistered crust and a sour, wheaty crumb. Keeps for a week.',['GLUTEN']],['Rye loaf',195,'Dense, seeded, a little sweet','6:45','sour','','Dark rye with sunflower and linseed. Slice it thin and put cheese on it.',['GLUTEN']]],
+ Cakes:[['Strawberry layer cake',170,'Vanilla sponge, jam, cream','8:00','cake','','Three layers of vanilla sponge, strawberry jam and whipped cream. Sold by the slice.',['GLUTEN','MILK','EGG']],['Lemon meringue tart',150,'Sharp curd, toasted meringue','8:00','tart','','Buttery shortcrust, tart lemon curd and a cloud of meringue torched to order.',['GLUTEN','MILK','EGG']],['Chocolate drip cake',165,'Dark, damp, glossy','8:00','cake','','Deep chocolate sponge with a ganache drip. Best with black coffee.',['GLUTEN','MILK','EGG']]],
+ Coffee:[['Flat white',115,'Double shot, silky milk','7:00','latte','','A double shot of House espresso and microfoam. Small, strong and smooth.',['MILK']],['Filter coffee',95,'Morning filter, refills free','7:00','latte','','Brewed by hand at 94 °C. Ask what is on the bar today.',[]],['Cortado',105,'Equal parts espresso and milk','7:00','latte','','Short and balanced. Chocolate and hazelnut from the House espresso.',['MILK']],['Espresso',80,'House blend, Brazil & Ethiopia','7:00','latte','','Chocolate, hazelnut and orange in a small cup.',[]]],
+ 'Matcha & Tea':[['Matcha latte',145,'Whisked by hand, oat or milk','7:00','matcha','','Ceremonial grade matcha whisked to order, topped with steamed milk.',['MILK']],['Iced matcha',150,'Matcha, cold milk, ice','7:00','iced','','Whisked matcha poured over cold milk and ice. Stir before sipping.',['MILK']],['Pot of tea',115,'Ask for today\'s leaves','7:00','latte','','Loose leaf, brewed in a pot for two cups.',[]]],
+ Food:[['Cheese & ham toastie',205,'Sourdough, aged cheddar','8:00','sour','','Thick sourdough, aged cheddar and ham, griddled until the edges crackle.',['GLUTEN','MILK']],['Soup & bread',225,'Changes daily','8:00','sour','','One soup a day, made in the morning. Comes with a thick slice of sourdough.',['GLUTEN']]]
 };
 let cat='Pastries',sel=0;
 $('#cats').innerHTML=Object.keys(M).map(c=>`<button class="cat" role="tab" data-c="${c}">${c.toUpperCase()}<sup>${String(M[c].length).padStart(2,'0')}</sup></button>`).join('');
 function drawMenu(){
   document.querySelectorAll('#cats .cat').forEach(b=>b.setAttribute('aria-selected',b.dataset.c===cat));
-  $('#rows').innerHTML=M[cat].map((m,i)=>`<button class="rw" data-i="${i}" aria-pressed="${i===sel}"><span><b>${m[0]}</b>${m[5]?`<span class="badge">${m[5]}</span>`:''}<br><small>${m[2]}</small></span><span><span class="pr">${m[1]} kr</span><br><span class="meta">out of the oven ${m[3]}</span></span></button>`).join('');
+  $('#rows').innerHTML=M[cat].map((m,i)=>`<button class="rw" data-i="${i}" aria-pressed="${i===sel}"><span><b>${m[0]}</b>${m[5]?`<span class="badge">${m[5]}</span>`:''}<br><small>${m[2]}</small></span><span><span class="pr">${egp(m[1])}</span><br><span class="meta">out of the oven ${m[3]}</span></span></button>`).join('');
   const m=M[cat][sel];
-  $('#plate').innerHTML=`<div class="disc"><img src="${img(m[4],1024)}" alt="${m[0]}"></div><div class="t"><h3>${m[0]}</h3><span class="pr">${m[1]} kr</span></div><p>${m[6]}</p>${m[7].length?`<div class="mono" style="margin-bottom:8px">CONTAINS</div><div class="chips">${m[7].map(a=>`<span class="chip">${a}</span>`).join('')}</div>`:''}<a class="btn btn-dark" href="#order">Pre-order →</a> <a class="link" href="#faq" style="margin-left:12px">Full menu & allergens</a>`;
+  $('#plate').innerHTML=`<div class="disc"><img src="${img(m[4],1024)}" alt="${m[0]}"></div><div class="t"><h3>${m[0]}</h3><span class="pr">${egp(m[1])}</span></div><p>${m[6]}</p>${m[7].length?`<div class="mono" style="margin-bottom:8px">CONTAINS</div><div class="chips">${m[7].map(a=>`<span class="chip">${a}</span>`).join('')}</div>`:''}<a class="btn btn-dark" href="#order">Pre-order →</a> <a class="link" href="#faq" style="margin-left:12px">Full menu & allergens</a>`;
   if(window.gsap)gsap.fromTo('#plate img',{scale:.7,rotate:-12,opacity:0},{scale:1,rotate:0,opacity:1,duration:.6,ease:'back.out(1.6)'});
 }
 $('#cats').onclick=e=>{const b=e.target.closest('.cat');if(b){cat=b.dataset.c;sel=0;drawMenu()}};
@@ -551,36 +554,36 @@ $('#rows').onclick=e=>{const b=e.target.closest('.rw');if(b){sel=+b.dataset.i;dr
 drawMenu();
 
 // coffee
-$('#beans').innerHTML=[['House espresso',160,'BRAZIL & ETHIOPIA · NATURAL + WASHED',['Chocolate','Hazelnut','Orange'],'MEDIUM',55],['Morning filter',190,'KENYA, NYERI · WASHED',['Blackcurrant','Brown sugar','Lime'],'LIGHT',25],['Slow Sunday',180,'COLOMBIA, HUILA · WASHED',['Caramel','Red apple','Almond'],'MEDIUM',50],['Decaf',170,'MEXICO, CHIAPAS · MOUNTAIN WATER',['Cocoa','Toffee','Pear'],'MEDIUM',50]].map(b=>`<article class="bean" data-r><div class="top"><h3>${b[0]}</h3><span class="pr">${b[1]} kr</span></div><span class="mono">${b[2]}</span><div><span class="mono">TASTES OF</span><br>${b[3].join(' · ')}</div><div><span class="mono">ROAST · ${b[4]}</span><div class="roast"><i style="width:${b[5]}%"></i></div></div></article>`).join('');
+$('#beans').innerHTML=[['House espresso',400,'BRAZIL & ETHIOPIA · NATURAL + WASHED',['Chocolate','Hazelnut','Orange'],'MEDIUM',55],['Morning filter',475,'KENYA, NYERI · WASHED',['Blackcurrant','Brown sugar','Lime'],'LIGHT',25],['Slow Sunday',450,'COLOMBIA, HUILA · WASHED',['Caramel','Red apple','Almond'],'MEDIUM',50],['Decaf',425,'MEXICO, CHIAPAS · MOUNTAIN WATER',['Cocoa','Toffee','Pear'],'MEDIUM',50]].map(b=>`<article class="bean" data-r><div class="top"><h3>${b[0]}</h3><span class="pr">${egp(b[1])}</span></div><span class="mono">${b[2]}</span><div><span class="mono">TASTES OF</span><br>${b[3].join(' · ')}</div><div><span class="mono">ROAST · ${b[4]}</span><div class="roast"><i style="width:${b[5]}%"></i></div></div></article>`).join('');
 $('#cups').oninput=e=>{const c=+e.target.value;$('#cupsN').textContent=c;$('#gC').textContent=Math.round(c*250/16);$('#mW').textContent=c*250};
 
 // cakes
 const CK={cake:['Strawberry layer cake','Chocolate drip cake','Lemon meringue tart','Princess cake'],size:['8 people','14 people','20 people'],flav:['Strawberry','Raspberry','Lemon']};
 const st={cake:0,size:0,flav:0};
 function opts(id,k){$(id).innerHTML=CK[k].map((o,i)=>`<button class="opt" data-k="${k}" data-i="${i}" aria-pressed="${st[k]===i}">${o}</button>`).join('')}
-function cakes(){opts('#oCake','cake');opts('#oSize','size');opts('#oFlav','flav');$('#cakeP').textContent=(580+[0,260,520][st.size]+(st.cake===3?60:0)+(st.flav===1?20:0))+' kr'}
+function cakes(){opts('#oCake','cake');opts('#oSize','size');opts('#oFlav','flav');$('#cakeP').textContent=egp(1450+[0,650,1300][st.size]+(st.cake===3?150:0)+(st.flav===1?50:0))}
 ['#oCake','#oSize','#oFlav'].forEach(id=>$(id).onclick=e=>{const b=e.target.closest('.opt');if(b){st[b.dataset.k]=+b.dataset.i;cakes()}});
 $('#msgIn').oninput=e=>$('#left').textContent=(30-e.target.value.length)+' letters left';
 $('#cakeBtn').onclick=()=>$('#cakeMsg').textContent=`Thanks! ${CK.cake[st.cake]} for ${CK.size[st.size]} is requested. We'll confirm by email. (Demo, nothing was sent.)`;
 cakes();
 
 // shops
-const SH=[['Södermalm','The first shop and the bakery. Everything is made here.','Nytorgsgatan 31, 116 40 Stockholm','+46 8 555 01 37','front',7],['Vasastan','A corner shop with a long window bar.','Upplandsgatan 14, 113 23 Stockholm','+46 8 555 01 52','inter',7],['Östermalm','Small, fast and next to the market hall.','Nybrogatan 8, 114 34 Stockholm','+46 8 555 01 68','shelf',7.5]];
+const SH=[['Zamalek','The first shop and the bakery. Everything is made here.','14 Hassan Sabry St, Zamalek, Cairo 11211','+20 2 0000 0137','front',7],['Maadi','A corner shop with a long window bar.','9 Road 233, Degla, Maadi, Cairo 11431','+20 2 0000 0152','inter',7],['Heliopolis','Small, fast and next to the market.','27 Baghdad St, Korba, Heliopolis, Cairo 11341','+20 2 0000 0168','shelf',7.5]];
 $('#shopGrid').innerHTML=SH.map((s,i)=>{const o=hr>=s[5]&&hr<18;return `<article class="shop" data-r><img src="${img(s[4],1024)}" alt="${s[0]} shop" loading="lazy"><div class="b"><span class="status ${o?'open':''}">${i+1} · ${o?'Open now':'Closed · opens '+(s[5]===7.5?'7:30':'7')+' am'}</span><h3>${s[0]}</h3><p>${s[1]}</p><p class="mute">${s[2]}<br>${s[3]}</p><div class="row"><a class="btn btn-dark" href="https://maps.google.com/?q=${encodeURIComponent(s[2])}" target="_blank" rel="noopener">Directions</a><a class="link" href="#order">Shop page</a></div></div></article>`}).join('');
 
 // napkins
-$('#napkins').innerHTML=[['GOOGLE','I plan my mornings around the cinnamon buns. If you come after ten they are gone.','Anna L. · Södermalm regular','Cinnamon bun + flat white'],['GOOGLE','The best sourdough in Stockholm. I have stopped baking my own.','Jonas B. · Vasastan','Country sourdough'],['TRIPADVISOR','A proper matcha latte, whisked in front of me. I came back three days in a row.','Mei T. · Visiting from Osaka','Matcha latte'],['GOOGLE','They made our wedding cake and people still ask me about it.','Sara K. · Östermalm','Princess cake for 60'],['YELP','Warm croissant, strong coffee, nobody rushing you. That is the whole idea.','David R. · Södermalm','Butter croissant + filter']].map(n=>`<figure class="nap" data-r><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><span class="mono">${n[0]}</span><q>${n[1]}</q><small>${n[2]}<br>ORDERED · ${n[3]}</small></figure>`).join('');
+$('#napkins').innerHTML=[['GOOGLE','I plan my mornings around the cinnamon buns. If you come after ten they are gone.','Nour A. · Zamalek regular','Cinnamon bun + flat white'],['GOOGLE','The best sourdough in Cairo. I have stopped baking my own.','Karim B. · Maadi','Country sourdough'],['TRIPADVISOR','A proper matcha latte, whisked in front of me. I came back three days in a row.','Mei T. · Visiting from Osaka','Matcha latte'],['GOOGLE','They made our wedding cake and people still ask me about it.','Sara K. · Heliopolis','Princess cake for 60'],['YELP','Warm croissant, strong coffee, nobody rushing you. That is the whole idea.','Omar R. · Zamalek','Butter croissant + filter']].map(n=>`<figure class="nap" data-r><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><span class="mono">${n[0]}</span><q>${n[1]}</q><small>${n[2]}<br>ORDERED · ${n[3]}</small></figure>`).join('');
 
 // pre-order box
-const PB=[['Butter croissant',42,'cro'],['Cinnamon bun',45,'bun'],['Country sourdough',90,'sour'],['Strawberry layer cake',68,'cake'],['Sea salt cookie',36,'cook'],['Lemon meringue tart',59,'tart']];
+const PB=[['Butter croissant',105,'cro'],['Cinnamon bun',115,'bun'],['Country sourdough',225,'sour'],['Strawberry layer cake',170,'cake'],['Sea salt cookie',90,'cook'],['Lemon meringue tart',150,'tart']];
 let box={};let bs=0,bt=0;
-const SHOPS=['Södermalm','Vasastan','Östermalm'],TIMES=['07:00','08:00','09:00'];
+const SHOPS=['Zamalek','Maadi','Heliopolis'],TIMES=['07:00','08:00','09:00'];
 function drawBox(){
-  $('#picks').innerHTML=PB.map((p,i)=>`<button class="pick" data-i="${i}" aria-label="Add ${p[0]} to the box">${box[i]?`<i>${box[i]}</i>`:''}<img src="${img(p[2],256)}" alt=""><b>${p[0]}</b><small>${p[1]} kr</small></button>`).join('');
+  $('#picks').innerHTML=PB.map((p,i)=>`<button class="pick" data-i="${i}" aria-label="Add ${p[0]} to the box">${box[i]?`<i>${box[i]}</i>`:''}<img src="${img(p[2],256)}" alt=""><b>${p[0]}</b><small>${egp(p[1])}</small></button>`).join('');
   const items=Object.entries(box).flatMap(([i,n])=>Array(n).fill(PB[i][2]));
   $('#inner').innerHTML=items.length?items.map(k=>`<img src="${img(k,256)}" alt="">`).join(''):'<span class="mono">NOTHING IN HERE YET</span>';
   const tot=Object.entries(box).reduce((s,[i,n])=>s+PB[i][1]*n,0);
-  $('#boxT').textContent=tot+' kr';$('#boxBtn').disabled=!items.length;
+  $('#boxT').textContent=egp(tot);$('#boxBtn').disabled=!items.length;
   $('#oShop').innerHTML=SHOPS.map((s,i)=>`<button class="opt" data-s="${i}" aria-pressed="${bs===i}">${s}</button>`).join('');
   $('#oTime').innerHTML=TIMES.map((s,i)=>`<button class="opt" data-t="${i}" aria-pressed="${bt===i}">${s}</button>`).join('');
 }
@@ -592,10 +595,10 @@ $('#boxBtn').onclick=()=>{const n=Object.values(box).reduce((a,b)=>a+b,0);$('#bo
 drawBox();
 
 // journal
-$('#posts').innerHTML=[['BAKERY','SEP 26, 2026 · 4 MIN · ELIN, HEAD BAKER','Why we bake at five','A croissant is best in its first three hours. So the oven goes on at four.','out'],['GUIDE','SEP 12, 2026 · 3 MIN · VÈLÔURÁ BAKERY','How to keep sourdough fresh for a week','Cut side down, no fridge, and what to do on day five.','sour'],['COFFEE BAR','AUG 30, 2026 · 5 MIN · KENJI, BAR LEAD','What makes a proper matcha latte','Grade, water temperature and why we whisk every cup by hand.','matcha']].map(p=>`<article class="post" data-r><img src="${img(p[4],800)}" alt="" loading="lazy"><span class="tag">${p[0]}</span><p class="mono" style="margin-top:12px;color:var(--mute)">${p[1]}</p><h3>${p[2]}</h3><p>${p[3]}</p><a class="link" href="#journal">Read the story →</a></article>`).join('');
+$('#posts').innerHTML=[['BAKERY','SEP 26, 2026 · 4 MIN · NADINE, HEAD BAKER','Why we bake at five','A croissant is best in its first three hours. So the oven goes on at four.','out'],['GUIDE','SEP 12, 2026 · 3 MIN · VÈLÔURÁ BAKERY','How to keep sourdough fresh for a week','Cut side down, no fridge, and what to do on day five.','sour'],['COFFEE BAR','AUG 30, 2026 · 5 MIN · KENJI, BAR LEAD','What makes a proper matcha latte','Grade, water temperature and why we whisk every cup by hand.','matcha']].map(p=>`<article class="post" data-r><img src="${img(p[4],800)}" alt="" loading="lazy"><span class="tag">${p[0]}</span><p class="mono" style="margin-top:12px;color:var(--mute)">${p[1]}</p><h3>${p[2]}</h3><p>${p[3]}</p><a class="link" href="#journal">Read the story →</a></article>`).join('');
 
 // faq
-const FQ=[['Ordering','Can I pre-order for the morning?','Yes. Order before 8 pm and your bag is ready from 7 am at the shop you choose.'],['Cakes','How far ahead do I order a cake?','48 hours ahead. You pay when you collect, from any of our three shops.'],['Menu','Do you list allergens?','Yes. Every item on the menu shows what it contains. Ask at the counter if you are unsure.'],['Menu','Is there anything vegan?','The sea salt cookie is vegan, and so is the sourdough. We also pour oat milk in everything.'],['Menu','Why are things sold out by noon?','We bake once a day, at five, and never keep anything for tomorrow.'],['Ordering','Do you cater for offices?','Yes. Write to hej@fikabakery.co with the date and headcount.'],['Shops','Can I buy your coffee beans?','Yes, in 250 g bags at any shop or in the beans section above.'],['Shops','Can I work from the shop?','Of course. Södermalm and Vasastan have window bars with plugs. Östermalm is small and fast.']];
+const FQ=[['Ordering','Can I pre-order for the morning?','Yes. Order before 8 pm and your bag is ready from 7 am at the shop you choose.'],['Cakes','How far ahead do I order a cake?','48 hours ahead. You pay when you collect, from any of our three shops.'],['Menu','Do you list allergens?','Yes. Every item on the menu shows what it contains. Ask at the counter if you are unsure.'],['Menu','Is there anything vegan?','The sea salt cookie is vegan, and so is the sourdough. We also pour oat milk in everything.'],['Menu','Why are things sold out by noon?','We bake once a day, at five, and never keep anything for tomorrow.'],['Ordering','Do you cater for offices?','Yes. Write to hello@velloura.example with the date and headcount.'],['Shops','Can I buy your coffee beans?','Yes, in 250 g bags at any shop or in the beans section above.'],['Shops','Can I work from the shop?','Of course. Zamalek and Maadi have window bars with plugs. Heliopolis is small and fast.']];
 const FC=['All',...new Set(FQ.map(f=>f[0]))];let fc='All';
 function faq(){
   $('#fcats').innerHTML=FC.map(c=>`<button class="cat" data-c="${c}" aria-selected="${c===fc}">${c.toUpperCase()}<sup>${c==='All'?FQ.length:FQ.filter(f=>f[0]===c).length}</sup></button>`).join('');
